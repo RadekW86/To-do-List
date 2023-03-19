@@ -1,0 +1,25 @@
+.section {
+    background-color: white;
+    margin: 10px 0;
+    box-shadow: 0 0 5px #ddd;
+
+}
+
+.section__top {
+    font-size: 20px;
+    border-bottom: 1px solid #ddd;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.section__heading {
+    font-size: 20px;
+    margin: 0;
+}
+
+.section__body {
+    padding: 20px;
+}
