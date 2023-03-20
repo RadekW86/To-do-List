@@ -7,7 +7,7 @@ This app allows user to create an ad-hoc task list, mark tasks done/undone and r
 
 html, CSS & BEM, JS ES6+, React
 
-![Preview](images/preview.png)
+![Preview](public/images/preview.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
