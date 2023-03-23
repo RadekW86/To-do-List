@@ -6,7 +6,7 @@ const List = (props) => (
     {props.taskTable.map((task) => (
       <li
         key={task.id}
-        // onClick={props.toggleTaskDone(task.id)}
+        onClick={() => props.toggleTaskDone(task.id)}
         className={`list__item ${
           task.done && props.hideDone ? "list__item--hidden" : ""
         }`}
@@ -20,7 +20,7 @@ const List = (props) => (
           {task.content}
         </div>
         <button
-        //   onClick={props.removeTask(task.id)}
+          onClick={() => props.removeTask(task.id)}
           className="list__button list__button--remove"
         >
           🗑️
