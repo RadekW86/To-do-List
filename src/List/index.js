@@ -1,3 +1,4 @@
+import React from "react";
 import "./style.css";
 
 const List = (props) => (
@@ -5,6 +6,7 @@ const List = (props) => (
     {props.taskTable.map((task) => (
       <li
         key={task.id}
+        // onClick={props.toggleTaskDone(task.id)}
         className={`list__item ${
           task.done && props.hideDone ? "list__item--hidden" : ""
         }`}
