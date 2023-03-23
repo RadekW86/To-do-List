@@ -32,6 +32,12 @@ function App() {
     );
   };
 
+  const markAllDone = () => {
+    setTaskTable((taskTable) =>
+      taskTable.map((task) => ({ ...task, done: true }))
+    );
+  };
+
   return (
     <Container>
       <Header title="Lista Zadań" />
@@ -43,6 +49,7 @@ function App() {
             taskTable={taskTable}
             hideDone={hideDone}
             toggleHideDone={toggleHideDone}
+            markAllDone={markAllDone}
           />
         }
         body={

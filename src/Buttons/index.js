@@ -7,6 +7,7 @@ const Buttons = (props) =>
         {props.hideDone ? "Pokaż" : "Ukryj"} ukończone
       </button>
       <button
+        onClick={props.markAllDone}
         className="section__button"
         disabled={props.taskTable.every(({ done }) => done)}
       >
