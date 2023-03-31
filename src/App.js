@@ -8,10 +8,7 @@ import Section from "./Section";
 
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [taskTable, setTaskTable] = useState([
-    { id: 1, content: "Przejść na React", done: false },
-    { id: 2, content: "nie jeść", done: true },
-  ]);
+  const [taskTable, setTaskTable] = useState([]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
@@ -39,10 +36,10 @@ function App() {
   };
 
   const addNewTask = (content) => {
-        setTaskTable((taskTable) => [
+    setTaskTable((taskTable) => [
       ...taskTable,
       {
-        id: taskTable.lenght? 1 : taskTable[taskTable.length - 1].id + 1,
+        id: taskTable.length === 0 ? 1 : taskTable[taskTable.length - 1].id + 1,
         content,
         done: false,
       },
