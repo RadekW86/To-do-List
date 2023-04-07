@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Buttons from "./Buttons";
 import Container from "./Container";
 import Form from "./Form";
@@ -20,12 +20,9 @@ function App() {
 
   const toggleTaskDone = (id) => {
     setTaskTable((taskTable) =>
-      taskTable.map((task) => {
-        if (task.id === id) {
-          return { ...task, done: !task.done };
-        }
-        return task;
-      })
+      taskTable.map((task) =>
+        task.id === id ? { ...task, done: !task.done } : task
+      )
     );
   };
 
