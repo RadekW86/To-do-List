@@ -14,6 +14,7 @@ This app allows user to create a task list, mark tasks done/undone and remove ta
 <li>React.js</li>
 </ul>
 
+## Preview:
 ![Preview](public/images/preview.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
