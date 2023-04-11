@@ -3,9 +3,16 @@
 ## DEMO:
 [click to visit](https://radekw86.github.io/task-list-react/)
 
-This app allows user to create an ad-hoc task list, mark tasks done/undone and remove tasks from the list. The operation is performed via functional buttons and a form.
+## General info:
+This app allows user to create a task list, mark tasks done/undone and remove tasks from the list. The operation is performed via functional buttons and a form. The data is stored in the Local Storage.
 
-html, CSS & BEM, JS ES6+, React
+## Technologies:
+<ul>
+<li>html</li>
+<li>CSS & BEM</li>
+<li>JS ES6+</li>
+<li>React.js</li>
+</ul>
 
 ![Preview](public/images/preview.png)
 
