@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useEffect } from "react";
 import Buttons from "./Buttons";
 import Container from "./Container";
 import Form from "./Form";
@@ -6,9 +7,22 @@ import Header from "./Header";
 import List from "./List";
 import Section from "./Section";
 
+const importLocalStorage = () => {
+  const savedContent = localStorage.getItem("tasks");
+  return savedContent ? JSON.parse(savedContent) : [];
+};
+
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [taskTable, setTaskTable] = useState([]);
+  const [taskTable, setTaskTable] = useState(importLocalStorage());
+
+  useEffect(() => {
+    exportLocalStorage();
+  }, [taskTable]);
+
+  const exportLocalStorage = () => {
+    localStorage.setItem("tasks", JSON.stringify(taskTable));
+  };
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
