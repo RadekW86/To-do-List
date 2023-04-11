@@ -7,22 +7,15 @@ import Header from "./Header";
 import List from "./List";
 import Section from "./Section";
 
-const importLocalStorage = () => {
-  const savedContent = localStorage.getItem("tasks");
-  return savedContent ? JSON.parse(savedContent) : [];
-};
-
 function App() {
   const [hideDone, setHideDone] = useState(false);
-  const [taskTable, setTaskTable] = useState(importLocalStorage());
+  const [taskTable, setTaskTable] = useState(
+    JSON.parse(localStorage.getItem("tasks")) || []
+  );
 
   useEffect(() => {
-    exportLocalStorage();
-  }, [taskTable]);
-
-  const exportLocalStorage = () => {
     localStorage.setItem("tasks", JSON.stringify(taskTable));
-  };
+  }, [taskTable]);
 
   const toggleHideDone = () => {
     setHideDone((hideDone) => !hideDone);
