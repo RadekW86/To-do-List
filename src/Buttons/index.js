@@ -1,18 +1,17 @@
-import "./style.css";
+import { StyledButton } from "./styled.js";
 
 const Buttons = (props) =>
   props.taskTable.length > 0 && (
-    <div className="section__button">
-      <button onClick={props.toggleHideDone} className="section__button">
+    <div>
+      <StyledButton onClick={props.toggleHideDone}>
         {props.hideDone ? "Pokaż" : "Ukryj"} ukończone
-      </button>
-      <button
+      </StyledButton>
+      <StyledButton
         onClick={props.markAllDone}
-        className="section__button"
         disabled={props.taskTable.every(({ done }) => done)}
       >
         Ukończ wszystkie
-      </button>
+      </StyledButton>
     </div>
   );
 
