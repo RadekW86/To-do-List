@@ -1,9 +1,9 @@
-import "./style.css";
+import {StyledMain} from "./styled.js";
 
 const Container = (prpos) => (
-    <main className="main">
+    <StyledMain>
         {prpos.children}
-    </main>
+    </StyledMain>
 );
 
 export default Container;
