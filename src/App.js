@@ -8,12 +8,7 @@ import Section from "./Container/Section";
 import { useTasks } from "./useTasks";
 
 function App() {
-  const [hideDone, setHideDone] = useState(false);
-
-  const toggleHideDone = () => {
-    setHideDone((hideDone) => !hideDone);
-  };
-
+ 
   const {
     taskTable,
     removeTask,
@@ -21,6 +16,8 @@ function App() {
     markAllDone,
     addNewTask,
     inputRef,
+    hideDone,
+    toggleHideDone,
   } = useTasks();
 
   return (
