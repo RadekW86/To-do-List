@@ -3,6 +3,7 @@ import "./style.css";
 
 const Form = (props) => {
   const [newTaskContent, setNewTaskContent] = useState("");
+
   const onFormSubmit = (event) => {
     event.preventDefault();
 
@@ -21,6 +22,7 @@ const Form = (props) => {
         className="form__input"
         value={newTaskContent}
         placeholder="Co jest do zrobienia?"
+        ref={props.inputRef}
         onChange={(event) => setNewTaskContent(event.target.value)}
       />
       <button className="form__addButton">Dodaj zadanie</button>

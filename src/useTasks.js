@@ -1,9 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 
 export const useTasks = () => {
+  const inputRef = useRef(null);
   const [taskTable, setTaskTable] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
+
+  useEffect(() => {
+    inputRef.current.focus();
+  }, [taskTable]);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskTable));
@@ -38,5 +43,12 @@ export const useTasks = () => {
     ]);
   };
 
-  return { taskTable, removeTask, toggleTaskDone, markAllDone, addNewTask };
+  return {
+    taskTable,
+    removeTask,
+    toggleTaskDone,
+    markAllDone,
+    addNewTask,
+    inputRef,
+  };
 };

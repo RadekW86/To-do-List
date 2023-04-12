@@ -14,15 +14,21 @@ function App() {
     setHideDone((hideDone) => !hideDone);
   };
 
-  const { taskTable, removeTask, toggleTaskDone, markAllDone, addNewTask } =
-    useTasks();
+  const {
+    taskTable,
+    removeTask,
+    toggleTaskDone,
+    markAllDone,
+    addNewTask,
+    inputRef,
+  } = useTasks();
 
   return (
     <Container>
       <Header title="Lista Zadań" />
       <Section
         title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} />}
+        body={<Form addNewTask={addNewTask} inputRef={inputRef} />}
       />
       <Section
         title="Lista zadań"
