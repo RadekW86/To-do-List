@@ -9,9 +9,9 @@ This app allows user to create a task list, mark tasks done/undone and remove ta
 ## Technologies:
 <ul>
 <li>html</li>
-<li>CSS & BEM</li>
 <li>JS ES6+</li>
 <li>React.js</li>
+<li>Styled Components</li>
 </ul>
 
 ## Preview:
