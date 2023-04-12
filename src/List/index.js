@@ -1,32 +1,34 @@
-import "./style.css";
+import {
+  StyledList,
+  StyledListItem,
+  StyledListContent,
+  StyledButton,
+} from "./styled.js";
 
 const List = (props) => (
-  <ul className="list">
+  <StyledList>
     {props.taskTable.map((task) => (
-      <li
-        key={task.id}
-        onClick={() => props.toggleTaskDone(task.id)}
-        className={`list__item ${
-          task.done && props.hideDone ? "list__item--hidden" : ""
-        }`}
-      >
-        <button className="list__button list__button--doneBox">
-          {task.done ? "✔️" : ""}
-        </button>
-        <div
-          className={`list__content${task.done ? " list__content--done" : ""}`}
+      <StyledListItem key={task.id} hidden={task.done && props.hideDone}>
+        <StyledButton 
+         doneBox 
+         onClick={() => props.toggleTaskDone(task.id)}
         >
-          {task.content}
-        </div>
-        <button
-          onClick={() => props.removeTask(task.id)}
-          className="list__button list__button--remove"
+         {task.done ? "✔️" : ""}
+        </StyledButton>
+        <StyledListContent 
+         done={task.done}
         >
-          🗑️
-        </button>
-      </li>
+         {task.content}
+        </StyledListContent>
+        <StyledButton 
+         removeBox 
+         onClick={() => props.removeTask(task.id)}
+        >
+         🗑️
+        </StyledButton>
+      </StyledListItem>
     ))}
-  </ul>
+  </StyledList>
 );
 
 export default List;
