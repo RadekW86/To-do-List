@@ -1,9 +1,7 @@
-import {StyledMain} from "./styled.js";
+import styled from "styled-components";
 
-const Container = (prpos) => (
-    <StyledMain>
-        {prpos.children}
-    </StyledMain>
-);
+const Container = styled.main`
+  padding: 20px;
+`;
 
 export default Container;
