@@ -2,14 +2,9 @@ import { useState, useEffect, useRef } from "react";
 
 export const useTasks = () => {
   const [hideDone, setHideDone] = useState(false);
-  const inputRef = useRef(null);
   const [taskTable, setTaskTable] = useState(
     JSON.parse(localStorage.getItem("tasks")) || []
   );
-
-  useEffect(() => {
-    inputRef.current.focus();
-  }, [taskTable]);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskTable));
@@ -20,28 +15,33 @@ export const useTasks = () => {
   };
 
   const removeTask = (id) => {
-    setTaskTable((taskTable) => taskTable.filter((task) => task.id !== id));
+    setTaskTable((previousTaskTable) =>
+      previousTaskTable.filter((task) => task.id !== id)
+    );
   };
 
   const toggleTaskDone = (id) => {
-    setTaskTable((taskTable) =>
-      taskTable.map((task) =>
+    setTaskTable((previousTaskTable) =>
+      previousTaskTable.map((task) =>
         task.id === id ? { ...task, done: !task.done } : task
       )
     );
   };
 
   const markAllDone = () => {
-    setTaskTable((taskTable) =>
-      taskTable.map((task) => ({ ...task, done: true }))
+    setTaskTable((previousTaskTable) =>
+      previousTaskTable.map((task) => ({ ...task, done: true }))
     );
   };
 
   const addNewTask = (content) => {
-    setTaskTable((taskTable) => [
-      ...taskTable,
+    setTaskTable((previousTaskTable) => [
+      ...previousTaskTable,
       {
-        id: taskTable.length === 0 ? 1 : taskTable[taskTable.length - 1].id + 1,
+        id:
+          previousTaskTable.length === 0
+            ? 1
+            : previousTaskTable[previousTaskTable.length - 1].id + 1,
         content,
         done: false,
       },
@@ -54,7 +54,6 @@ export const useTasks = () => {
     toggleTaskDone,
     markAllDone,
     addNewTask,
-    inputRef,
     hideDone,
     toggleHideDone,
   };

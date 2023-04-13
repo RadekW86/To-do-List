@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Buttons from "./Container/Section/Buttons";
 import Container from "./Container";
 import Form from "./Container/Section/Form";
@@ -8,14 +7,12 @@ import Section from "./Container/Section";
 import { useTasks } from "./useTasks";
 
 function App() {
- 
   const {
     taskTable,
     removeTask,
     toggleTaskDone,
     markAllDone,
     addNewTask,
-    inputRef,
     hideDone,
     toggleHideDone,
   } = useTasks();
@@ -25,7 +22,7 @@ function App() {
       <Header title="Lista Zadań" />
       <Section
         title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} inputRef={inputRef} />}
+        body={<Form addNewTask={addNewTask} />}
       />
       <Section
         title="Lista zadań"
