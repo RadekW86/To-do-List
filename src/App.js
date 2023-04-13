@@ -1,9 +1,9 @@
-import Buttons from "./Container/Section/Buttons";
+import Buttons from "./Buttons";
 import Container from "./Container";
-import Form from "./Container/Section/Form";
-import Header from "./Container/Header";
-import List from "./Container/Section/List";
-import Section from "./Container/Section";
+import Form from "./Form";
+import Header from "./Header";
+import List from "./List";
+import Section from "./Section";
 import { useTasks } from "./useTasks";
 
 function App() {
