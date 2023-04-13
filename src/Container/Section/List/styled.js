@@ -40,18 +40,18 @@ export const StyledButton = styled.button`
   height: 30px;
   transition: 0.4s;
 
+  &:hover {
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: brightness(120%);
+  }
+
   ${({ doneBox }) =>
     doneBox &&
     css`
       background-color: hsl(120, 60%, 35%);
-
-      &:hover {
-        background-color: hsl(120, 60%, 40%);
-      }
-
-      &:active {
-        background-color: hsl(120, 60%, 45%);
-      }
     `}
 
   ${({ removeBox }) =>
@@ -59,13 +59,5 @@ export const StyledButton = styled.button`
     css`
       background-color: hsl(348, 83%, 45%);
       font-size: 14px;
-
-      &:hover {
-        background-color: hsl(348, 83%, 50%);
-      }
-
-      &:active {
-        background-color: hsl(348, 83%, 55%);
-      }
     `}
 `;
