@@ -5,13 +5,13 @@ import {
   StyledButton,
 } from "./styled.js";
 
-const List = (props) => (
+const List = ({ taskTable, hideDone, toggleTaskDone, removeTask }) => (
   <StyledList>
-    {props.taskTable.map((task) => (
-      <StyledListItem key={task.id} hidden={task.done && props.hideDone}>
+    {taskTable.map((task) => (
+      <StyledListItem key={task.id} hidden={task.done && hideDone}>
         <StyledButton 
          doneBox 
-         onClick={() => props.toggleTaskDone(task.id)}
+         onClick={() => toggleTaskDone(task.id)}
         >
          {task.done ? "✔️" : ""}
         </StyledButton>
@@ -22,7 +22,7 @@ const List = (props) => (
         </StyledListContent>
         <StyledButton 
          removeBox 
-         onClick={() => props.removeTask(task.id)}
+         onClick={() => removeTask(task.id)}
         >
          🗑️
         </StyledButton>

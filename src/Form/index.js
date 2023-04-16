@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { StyledForm, StyledFormInput, StyledAddButton } from "./styled.js";
 
-const Form = (props) => {
+const Form = ({ addNewTask }) => {
   const [newTaskContent, setNewTaskContent] = useState("");
   const inputRef = useRef(null);
 
@@ -11,7 +11,7 @@ const Form = (props) => {
     const trimmedInput = newTaskContent.trim();
 
     if (trimmedInput) {
-      props.addNewTask(trimmedInput);
+      addNewTask(trimmedInput);
     }
 
     inputRef.current.focus();
