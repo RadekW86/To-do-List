@@ -1,7 +1,7 @@
 # Tasks List
 
 ## DEMO:
-[click to visit](https://radekw86.github.io/task-list-react/)
+[click to visit](https://radekw86.github.io/to-do-list/)
 
 ## General info:
 This app allows user to create a task list, mark tasks done/undone and remove tasks from the list. The operation is performed via functional buttons and a form. The data is stored in the Local Storage.
