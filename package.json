@@ -1,8 +1,8 @@
 {
-  "name": "task-list-react",
+  "name": "task-list",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://radekw86.github.io/task-list-react/",
+  "homepage": "https://radekw86.github.io/task-list/",
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.16.5",
