@@ -1,50 +1,33 @@
-import Buttons from "./Buttons";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
+import { selectTasks } from "./tasksSlice";
 import Container from "../../common/Container";
-import Form from "./Form";
 import Header from "../../common/Header";
-import List from "./List";
 import Section from "../../common/Section";
-import { useTasks } from "../../useTasks";
+import Buttons from "./Buttons";
+import Form from "./Form";
+import List from "./List";
 
-function App() {
-  const {
-    taskTable,
-    removeTask,
-    toggleTaskDone,
-    markAllDone,
-    addNewTask,
-    hideDone,
-    toggleHideDone,
-  } = useTasks();
+function Tasks() {
+  const { taskTable } = useSelector(selectTasks);
+
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(taskTable));
+  }, [taskTable]);
 
   return (
     <Container>
       <Header title="Lista Zadań" />
-      <Section
-        title="Dodaj nowe zadanie"
-        body={<Form addNewTask={addNewTask} />}
-      />
+      <Section 
+        title="Dodaj nowe zadanie" 
+        body={<Form />} />
       <Section
         title="Lista zadań"
-        extraHeaderContent={
-          <Buttons
-            taskTable={taskTable}
-            hideDone={hideDone}
-            toggleHideDone={toggleHideDone}
-            markAllDone={markAllDone}
-          />
-        }
-        body={
-          <List
-            taskTable={taskTable}
-            hideDone={hideDone}
-            removeTask={removeTask}
-            toggleTaskDone={toggleTaskDone}
-          />
-        }
+        extraHeaderContent={<Buttons />}
+        body={<List />}
       />
     </Container>
   );
 }
 
-export default App;
+export default Tasks;
