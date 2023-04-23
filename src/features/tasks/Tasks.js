@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { selectTasks } from "./tasksSlice";
+import { selectTasksState } from "./tasksSlice";
 import Container from "../../common/Container";
 import Header from "../../common/Header";
 import Section from "../../common/Section";
@@ -9,7 +9,7 @@ import Form from "./Form";
 import List from "./List";
 
 function Tasks() {
-  const { taskTable } = useSelector(selectTasks);
+  const { taskTable } = useSelector(selectTasksState);
 
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(taskTable));
