@@ -9,11 +9,11 @@ import Form from "./Form";
 import List from "./List";
 
 function Tasks() {
-  const { taskTable } = useSelector(selectTasksState);
+  // const { taskTable } = useSelector(selectTasksState);
 
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(taskTable));
-  }, [taskTable]);
+  // useEffect(() => {
+  //   localStorage.setItem("tasks", JSON.stringify(taskTable));
+  // }, [taskTable]);
 
   return (
     <Container>

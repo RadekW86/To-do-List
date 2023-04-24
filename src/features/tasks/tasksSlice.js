@@ -4,7 +4,9 @@ const tasksSlice = createSlice({
   name: "tasks",
 
   initialState: {
-    taskTable: JSON.parse(localStorage.getItem("tasks")) || [],
+    taskTable: 
+    // JSON.parse(localStorage.getItem("tasks")) || 
+    [],
     hideDone: false,
   },
 
@@ -28,6 +30,10 @@ const tasksSlice = createSlice({
         task.done = true;
       }
     },
+    fetchExampleTasks: () => {},
+    setTasks: (state, { payload: tasks }) => {
+      state.taskTable = tasks;
+    },
   },
 });
 
@@ -37,6 +43,8 @@ export const {
   toggleTaskDone,
   removeTask,
   markAllDone,
+  fetchExampleTasks,
+  setTasks,
 } = tasksSlice.actions;
 export const selectTasksState = (state) => state.tasks;
 export default tasksSlice.reducer;
