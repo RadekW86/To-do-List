@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from "react-redux";
 import { StyledButton, StyledButtons } from "../styled.js";
-import { selectTasksState, fetchExampleTasks } from "../../tasksSlice.js";
+import { selectTasksState, fetchExampleTasks } from "../../../tasksSlice.js";
 
 const TopButton = () => {
   const { loading } = useSelector(selectTasksState);

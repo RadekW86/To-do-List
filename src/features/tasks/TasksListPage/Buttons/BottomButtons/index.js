@@ -4,7 +4,7 @@ import {
   selectTasksState,
   toggleHideDone,
   markAllDone,
-} from "../../tasksSlice.js";
+} from "../../../tasksSlice.js";
 
 const BottomButtons = () => {
   const { taskTable, hideDone } = useSelector(selectTasksState);

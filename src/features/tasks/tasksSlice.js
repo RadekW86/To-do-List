@@ -56,5 +56,7 @@ export const {
 
 export const selectTasksState = (state) => state.tasks;
 export const selectTaskTable = (state) => selectTasksState(state).taskTable;
+export const selectTaskById = (state, taskId) =>
+  selectTaskTable(state).find(({ id }) => id === taskId);
 
 export default tasksSlice.reducer;
