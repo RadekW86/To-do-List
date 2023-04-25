@@ -6,7 +6,7 @@ export const StyledButtons = styled.div`
 `;
 
 export const StyledButton = styled.button`
-  color: teal;
+  color: ${({ theme }) => theme.primaryColor};
   border: none;
   background: transparent;
   margin: 0 0 0 20px;
@@ -19,11 +19,11 @@ export const StyledButton = styled.button`
   }
 
   &:hover {
-    color: hsl(180, 100%, 30%);
+    filter: brightness(110%);
   }
 
   &:active {
-    color: hsl(180, 100%, 35%);
+    filter: brightness(120%);
   }
 
   &:disabled {

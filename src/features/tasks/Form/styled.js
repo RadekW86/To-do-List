@@ -16,18 +16,18 @@ export const StyledFormInput = styled.input`
 `;
 
 export const StyledAddButton = styled.button`
-  background-color: hsl(180, 100%, 25%);
+  background-color: ${({ theme }) => theme.primaryColor};;
   color: white;
   padding: 10px;
   border: none;
   transition: 0.4s;
 
   &:hover {
-    background-color: hsl(180, 100%, 30%);
+    filter: brightness(110%);
     transform: scale(1.05);
   }
 
   &:active {
-    background-color: hsl(180, 100%, 35%);
+    filter: brightness(120%);
   }
 `;
