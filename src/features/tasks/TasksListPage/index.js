@@ -4,6 +4,7 @@ import Section from "../../../common/Section";
 import TopButton from "./Buttons/TopButton";
 import BottomButtons from "./Buttons/BottomButtons";
 import Form from "./Form";
+import Search from "./Search";
 import List from "./List";
 
 function TasksListPage() {
@@ -14,6 +15,10 @@ function TasksListPage() {
         title="Dodaj nowe zadanie"
         extraHeaderContent={<TopButton />}
         body={<Form />}
+      />
+      <Section 
+        title="Wyszukaj" 
+        body={<Search />} 
       />
       <Section
         title="Lista zadań"

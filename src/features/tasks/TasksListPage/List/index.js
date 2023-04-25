@@ -3,6 +3,7 @@ import {
   selectTasksState,
   toggleTaskDone,
   removeTask,
+  selectTasksByQuery,
 } from "../../tasksSlice.js";
 import {
   StyledList,
@@ -10,11 +11,20 @@ import {
   StyledListContent,
   StyledButton,
 } from "./styled.js";
-import { Link } from "react-router-dom/cjs/react-router-dom.min.js";
+import {
+  Link,
+  useLocation,
+} from "react-router-dom/cjs/react-router-dom.min.js";
+import searchQueryParamName from "../searchQueryParamName.js";
 
 const List = () => {
-  const { taskTable, hideDone } = useSelector(selectTasksState);
+  const locaction = useLocation();
+  const query = new URLSearchParams(locaction.search).get(searchQueryParamName);
+
+  const taskTable = useSelector((state) => selectTasksByQuery(state, query));
+  const { hideDone } = useSelector(selectTasksState);
   const dispatch = useDispatch();
+
   return (
     <StyledList>
       {taskTable.map((task) => (
