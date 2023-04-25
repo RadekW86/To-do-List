@@ -1,10 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
-import { StyledButton } from "../styled.js";
+import { StyledButton, StyledButtons } from "../styled.js";
 import {
   selectTasksState,
   toggleHideDone,
   markAllDone,
-  fetchExampleTasks,
 } from "../../tasksSlice.js";
 
 const BottomButtons = () => {
@@ -13,7 +12,7 @@ const BottomButtons = () => {
 
   return (
     taskTable.length > 0 && (
-      <div>
+      <StyledButtons>
         <StyledButton onClick={() => dispatch(toggleHideDone())}>
           {hideDone ? "Pokaż" : "Ukryj"} ukończone
         </StyledButton>
@@ -23,7 +22,7 @@ const BottomButtons = () => {
         >
           Ukończ wszystkie
         </StyledButton>
-      </div>
+      </StyledButtons>
     )
   );
 };

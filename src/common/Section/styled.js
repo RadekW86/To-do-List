@@ -10,10 +10,16 @@ export const StyledSectionTop = styled.div`
   font-size: 20px;
   border-bottom: 1px solid #ddd;
   padding: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 20px;
+  align-items: center;
   justify-content: space-between;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+    grid-gap: 5px;
+  }
 `;
 
 export const StyledSectionHeading = styled.h2`
