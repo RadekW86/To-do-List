@@ -10,13 +10,10 @@ html {
   }
   
   body {
-    max-width: 900px;
-    min-height: 600px;
-    margin: 0 auto;
     overflow-x: auto;
     font-size: 16px;
     line-height: 1.5;
-    color: #222;
+    color: ${({ theme }) => theme.color.textColor};
     background-color: #eee;
     font-family: "Montserrat", sans-serif;
   }

@@ -10,11 +10,9 @@ import {
   StyledListItem,
   StyledListContent,
   StyledButton,
+  StyledLink,
 } from "./styled.js";
-import {
-  Link,
-  useLocation,
-} from "react-router-dom/cjs/react-router-dom.min.js";
+import { useLocation } from "react-router-dom/cjs/react-router-dom.min.js";
 import searchQueryParamName from "../searchQueryParamName.js";
 
 const List = () => {
@@ -36,7 +34,7 @@ const List = () => {
             {task.done ? "✔️" : ""}
           </StyledButton>
           <StyledListContent done={task.done}>
-            <Link to={`/Tasks/${task.id}`}>{task.content}</Link>
+            <StyledLink to={`/Tasks/${task.id}`}>{task.content}</StyledLink>
           </StyledListContent>
           <StyledButton removeBox onClick={() => dispatch(removeTask(task.id))}>
             🗑️

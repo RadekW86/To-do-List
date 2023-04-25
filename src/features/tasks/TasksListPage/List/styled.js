@@ -1,4 +1,5 @@
 import styled, { css } from "styled-components";
+import { Link } from "react-router-dom/cjs/react-router-dom.min.js";
 
 export const StyledList = styled.ul`
   list-style: none;
@@ -31,6 +32,21 @@ export const StyledListContent = styled.div`
     css`
       text-decoration: line-through;
     `}
+`;
+
+export const StyledLink = styled(Link)`
+  text-decoration: none;
+  color: ${({ theme }) => theme.color.textColor};
+  
+  &:visited {
+    color: ${({ theme }) => theme.color.textColor};
+  }
+  &:hover {
+    filter: brightness(120%);
+  }
+  &:focus {
+    filter: brightness(120%);
+  }
 `;
 
 export const StyledButton = styled.button`

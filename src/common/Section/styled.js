@@ -16,7 +16,7 @@ export const StyledSectionTop = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     grid-template-columns: 1fr;
     grid-gap: 5px;
   }

@@ -24,6 +24,6 @@ function* saveToLocalStorageHandler() {
 }
 
 export function* tasksSaga() {
-  yield debounce(2000, fetchExampleTasks.type, fetchExampleTasksHandler);
+  yield debounce(1000, fetchExampleTasks.type, fetchExampleTasksHandler);
   yield takeEvery("*", saveToLocalStorageHandler);
 }

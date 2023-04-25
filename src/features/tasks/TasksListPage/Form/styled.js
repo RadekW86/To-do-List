@@ -5,14 +5,14 @@ export const StyledForm = styled.form`
   grid-template-columns: 1fr auto;
   grid-gap: 20px;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     grid-template-columns: 1fr;
   }
 `;
 
 export const StyledAddButton = styled.button`
-  background-color: ${({ theme }) => theme.primaryColor};;
-  color: white;
+  background-color: ${({ theme }) => theme.color.primaryColor};
+  color: ${({ theme }) => theme.color.secondaryColor};
   padding: 10px;
   border: none;
   transition: 0.4s;

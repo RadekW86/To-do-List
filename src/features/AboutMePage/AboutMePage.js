@@ -2,10 +2,10 @@ import Container from "../../common/Container";
 import Header from "../../common/Header";
 import Section from "../../common/Section";
 
-function AuthorPage() {
+function AboutMePage() {
   return (
     <Container>
-      <Header title="O developerze" />
+      <Header title="O mnie" />
       <Section
         title="Radosław Włodarski"
         body={
@@ -27,4 +27,4 @@ function AuthorPage() {
   );
 }
 
-export default AuthorPage;
+export default AboutMePage;
