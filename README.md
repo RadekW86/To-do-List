@@ -4,7 +4,17 @@
 [click to visit](https://radekw86.github.io/to-do-list/)
 
 ## General info:
-This app allows user to create a task list, mark tasks done/undone and remove tasks from the list. The operation is performed via functional buttons and a form. The data is stored in the Local Storage.
+This app allows user to create a task list. The functionality involves:
+<ul>
+<li>adding new tasks</li>
+<li>marking tasks done/undone</li>
+<li>removing tasks from the list</li>
+<li>viewing task details</li>
+<li>filtering tasks</li>
+<li>geting example tasks from a JSON file</li>
+</ul>
+ The operation is performed via functional buttons and a form. The data is stored in the Local Storage.
+ Additionally, the "about me" page is accessible via top navigation bar.
 
 ## Technologies:
 <ul>
@@ -12,7 +22,8 @@ This app allows user to create a task list, mark tasks done/undone and remove ta
 <li>JS ES6+</li>
 <li>React.js</li>
 <li>Styled Components</li>
-<li>Redux</li>
+<li>Redux, Redux-saga</li>
+<li>React Router</li>
 </ul>
 
 ## Preview:
