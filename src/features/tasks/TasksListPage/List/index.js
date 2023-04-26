@@ -12,12 +12,11 @@ import {
   StyledButton,
   StyledLink,
 } from "./styled.js";
-import { useLocation } from "react-router-dom/cjs/react-router-dom.min.js";
+import { useQueryParameter } from "../queryParameters.js";
 import searchQueryParamName from "../searchQueryParamName.js";
 
 const List = () => {
-  const locaction = useLocation();
-  const query = new URLSearchParams(locaction.search).get(searchQueryParamName);
+  const query = useQueryParameter(searchQueryParamName);
 
   const taskTable = useSelector((state) => selectTasksByQuery(state, query));
   const { hideDone } = useSelector(selectTasksState);
