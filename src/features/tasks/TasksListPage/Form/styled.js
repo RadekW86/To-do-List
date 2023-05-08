@@ -16,6 +16,8 @@ export const StyledAddButton = styled.button`
   padding: 10px;
   border: none;
   transition: 0.4s;
+  
+  cursor: pointer;
 
   &:hover {
     filter: brightness(110%);

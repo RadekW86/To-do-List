@@ -12,7 +12,7 @@ const TopButton = () => {
         disabled={loading}
         onClick={() => dispatch(fetchExampleTasks())}
       >
-        {loading ? "loading..." : "Pobierz przykładowe zadania"}
+        {loading ? "ładowanie..." : "Pobierz przykładowe zadania"}
       </StyledButton>
     </StyledButtons>
   );

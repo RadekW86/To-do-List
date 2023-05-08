@@ -12,7 +12,9 @@ const Form = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+
     const trimmedInput = newTaskContent.trim();
+    
     if (trimmedInput) {
       dispatch(
         addTask({
@@ -22,6 +24,7 @@ const Form = () => {
         })
       );
     }
+    
     inputRef.current.focus();
     setNewTaskContent("");
   };

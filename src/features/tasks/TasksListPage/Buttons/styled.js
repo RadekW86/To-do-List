@@ -12,6 +12,8 @@ export const StyledButton = styled.button`
   margin: 0 0 0 20px;
   transition: 0.25s;
   font-size: 17px;
+  
+  cursor: pointer;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}) {
     flex-basis: 100%;
