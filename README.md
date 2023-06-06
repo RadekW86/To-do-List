@@ -1,7 +1,7 @@
 # Tasks List
 
 ## DEMO:
-[click to visit](https://radekw86.github.io/to-do-list/)
+[click to visit](https://radekw86.github.io/To-do-List/)
 
 ## General info:
 This app allows user to create a task list. The functionality involves:
